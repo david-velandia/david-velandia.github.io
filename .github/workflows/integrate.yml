@@ -9,7 +9,7 @@ jobs:
         node-version: [14.x]
 
     env:
-      NEXT_PUBLIC_BASE_PATH: /adavis9012.github.io
+      NEXT_PUBLIC_BASE_PATH: /david-velandia.github.io
 
     steps:
       - name: Checkout 🛎️
@@ -32,7 +32,7 @@ jobs:
         run: npm run export
 
       - name: Check Route
-        run: echo $PWD; find . \( -path ./node_modules -o -path ./.next -o -path './.git*' \)  -prune -o \( ! -path '*/enhancers' ! -path '*/enhancers/*' -o  -name xyz.js  \) -print 
+        run: echo $PWD; find . \( -path ./node_modules -o -path ./.next -o -path './.git*' \)  -prune -o \( ! -path '*/enhancers' ! -path '*/enhancers/*' -o  -name xyz.js  \) -print
 
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll

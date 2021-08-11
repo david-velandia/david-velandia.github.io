@@ -36,7 +36,6 @@ const theme: DefaultTheme = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log('render');
   return (
     <>
       <GlobalStyle />
