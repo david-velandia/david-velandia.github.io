@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { Logo } from '@/atoms/Icons';
-import { DesktopMenu, LogoLink, Nav, NavItem, NavLink } from './Navbar.styles';
 import NextLink from 'next/link';
+
+import { Logo } from '@/atoms/Icons';
 import { Hide } from '@/atoms/Hide';
+import { DesktopMenu, LogoLink, Nav, NavItem, NavLink } from './Navbar.styles';
 
 export interface NavbarProps {
   items: {

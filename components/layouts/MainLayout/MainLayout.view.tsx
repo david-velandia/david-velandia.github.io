@@ -1,4 +1,4 @@
-import { Navbar } from '@/molecules/Navbar/Navbar.view';
+import { Navbar } from '@/molecules/Navbar';
 import { Header, Main } from './MainLayout.styles';
 
 export const MainLayout = ({ children }) => (
