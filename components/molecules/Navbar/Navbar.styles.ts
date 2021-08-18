@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   justify-content: space-between;
   width: 100%;
 
-  ${({ theme }) => theme.breakpoints.desktop} {
+  ${({ theme }) => theme.query.desktop} {
     padding-left: 68px;
   }
 `;

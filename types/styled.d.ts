@@ -9,6 +9,11 @@ declare module 'styled-components' {
       mainBlack: string;
     };
     breakpoints: {
+      desktop: number;
+      tablet: number;
+      mobile: number;
+    };
+    query: {
       desktop: string;
       tablet: string;
     };

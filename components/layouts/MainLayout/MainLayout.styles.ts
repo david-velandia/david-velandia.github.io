@@ -10,7 +10,7 @@ export const Header = styled.header`
   top: 0;
   width: 100%;
 
-  ${({ theme }) => theme.breakpoints.desktop} {
+  ${({ theme }) => theme.query.desktop} {
     padding: 0 21px;
   }
 `;
@@ -19,7 +19,7 @@ export const Main = styled.main`
   margin: auto;
   max-width: 1150px;
 
-  ${({ theme }) => theme.breakpoints.desktop} {
+  ${({ theme }) => theme.query.desktop} {
     padding: 20px 21px 20px 89px;
   }
 `;

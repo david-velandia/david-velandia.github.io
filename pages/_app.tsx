@@ -32,8 +32,17 @@ const theme: DefaultTheme = {
     mainBlack: '#222222',
   },
   breakpoints: {
-    desktop: '@media (min-width: 992px)',
-    tablet: '@media (min-width: 768px) and (max-width: 991px)',
+    desktop: 992,
+    tablet: 768,
+    mobile: 0,
+  },
+  get query() {
+    return {
+      desktop: `@media (min-width: ${this.breakpoints.desktop}px)`,
+      tablet: `@media (min-width: ${this.breakpoints.tablet}px) and (max-width: ${
+        this.breakpoints.desktop - 1
+      }px)`,
+    };
   },
 };
 
