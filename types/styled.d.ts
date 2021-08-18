@@ -10,6 +10,7 @@ declare module 'styled-components' {
     };
     breakpoints: {
       desktop: string;
+      tablet: string;
     };
   }
 }

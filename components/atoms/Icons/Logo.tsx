@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Logo = () => (
   <svg viewBox="0 0 264 53" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path

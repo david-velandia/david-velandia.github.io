@@ -1,3 +1,4 @@
+import React from 'react';
 import { AppProps } from 'next/app';
 import { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components';
 
@@ -31,7 +32,8 @@ const theme: DefaultTheme = {
     mainBlack: '#222222',
   },
   breakpoints: {
-    desktop: ' @media (min-width: 992px)',
+    desktop: '@media (min-width: 992px)',
+    tablet: '@media (min-width: 768px) and (max-width: 991px)',
   },
 };
 
