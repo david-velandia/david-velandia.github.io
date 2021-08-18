@@ -1,9 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import NextLink from 'next/link';
 
 import { Logo } from '@/atoms/Icons';
 import { Hide } from '@/atoms/Hide';
 import { DesktopMenu, LogoLink, Nav, NavItem, NavLink } from './Navbar.styles';
+import { Hamburger } from '@/atoms/Hamburger';
 
 export interface NavbarProps {
   items: {
@@ -13,8 +14,30 @@ export interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ items }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  function handleHamburgerClick() {
+    setIsActive((current) => !current);
+  }
+
   return (
     <Nav>
+      <Hide devices={['desktop']}>
+        <Hamburger isActive={isActive} onClick={handleHamburgerClick} />
+        {isActive && (
+          <div>
+            <ul>
+              {items.map((item) => (
+                <NavItem key={`menu-${item.label}`}>
+                  <NextLink href={item.to}>
+                    <NavLink>{item.label}</NavLink>
+                  </NextLink>
+                </NavItem>
+              ))}
+            </ul>
+          </div>
+        )}
+      </Hide>
       <NextLink href="/">
         <LogoLink>
           <Logo />
