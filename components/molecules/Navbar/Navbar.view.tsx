@@ -2,9 +2,8 @@ import React, { FC, useState } from 'react';
 import NextLink from 'next/link';
 
 import { Logo } from '@/atoms/Icons';
-import { Hide } from '@/atoms/Hide';
+import { Hide, Hamburger } from '@/atoms';
 import { DesktopMenu, LogoLink, Nav, NavItem, NavLink } from './Navbar.styles';
-import { Hamburger } from '@/atoms/Hamburger';
 
 export interface NavbarProps {
   items: {
