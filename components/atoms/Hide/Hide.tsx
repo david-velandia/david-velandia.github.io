@@ -23,6 +23,10 @@ export const Hide: FC<Props> = ({ devices = [], children }) => {
     };
   }, []);
 
+  function isLoading(children) {
+    return width === 0 ? <div style={{ visibility: 'hidden' }}>{children}</div> : children;
+  }
+
   if (devices.length === 0 || width === 0) {
     return null;
   }
@@ -36,13 +40,10 @@ export const Hide: FC<Props> = ({ devices = [], children }) => {
     return null;
   }
 
-  return <>{children}</>;
+  return isLoading(children);
 };
 
-export async function getStaticProps(context) {
-  console.log(context);
-  console.log(window);
-
+export async function getStaticProps() {
   return {
     props: {
       window,
