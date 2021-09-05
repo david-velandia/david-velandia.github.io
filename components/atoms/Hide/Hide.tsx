@@ -1,5 +1,4 @@
-import React, { FC, useState, useContext } from 'react';
-import { useIsomorphicLayoutEffect } from '@/hooks';
+import React, { FC, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 interface Props {
@@ -7,21 +6,10 @@ interface Props {
 }
 
 export const Hide: FC<Props> = ({ devices = [], children }) => {
-  const [width, setWidth] = useState(0);
   const {
     breakpoints: { desktop: desktopBreakpoint, tablet: tabletBreakpoint },
+    width,
   } = useContext(ThemeContext);
-
-  useIsomorphicLayoutEffect(() => {
-    if (process.browser) {
-      window.addEventListener('resize', () => setWidth(window.innerWidth));
-      setWidth(window.innerWidth);
-    }
-
-    return () => {
-      window.removeEventListener('resize', () => setWidth(window.innerWidth));
-    };
-  }, []);
 
   if (devices.length === 0) {
     return null;

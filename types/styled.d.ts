@@ -17,5 +17,6 @@ declare module 'styled-components' {
       desktop: string;
       tablet: string;
     };
+    width?: number;
   }
 }

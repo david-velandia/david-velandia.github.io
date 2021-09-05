@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { AppProps } from 'next/app';
 import { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components';
+import { useIsomorphicLayoutEffect } from '@/hooks';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -47,11 +48,33 @@ const theme: DefaultTheme = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [width, setWidth] = useState(0);
+  const containerRef = useRef();
+
+  useIsomorphicLayoutEffect(() => {
+    const containerElement = containerRef.current as HTMLDivElement;
+
+    if (process.browser) {
+      window.addEventListener('resize', () => setWidth(window.innerWidth));
+      setWidth(window.innerWidth);
+
+      containerElement.removeAttribute('style');
+    }
+
+    return () => {
+      window.removeEventListener('resize', () => setWidth(window.innerWidth));
+    };
+  }, []);
+
+  theme.width = width;
+
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <div ref={containerRef} style={{ visibility: 'hidden' }}>
+          <Component {...pageProps} />
+        </div>
       </ThemeProvider>
     </>
   );
