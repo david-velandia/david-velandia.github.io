@@ -13,7 +13,7 @@ export const Hide: FC<Props> = ({ devices = [], children }) => {
   } = useContext(ThemeContext);
 
   useIsomorphicLayoutEffect(() => {
-    if (typeof window !== undefined) {
+    if (process.browser) {
       window.addEventListener('resize', () => setWidth(window.innerWidth));
       setWidth(window.innerWidth);
     }
@@ -23,11 +23,10 @@ export const Hide: FC<Props> = ({ devices = [], children }) => {
     };
   }, []);
 
-  function isLoading(children) {
-    return width === 0 ? <div style={{ visibility: 'hidden' }}>{children}</div> : children;
+  if (devices.length === 0) {
+    return null;
   }
-
-  if (devices.length === 0 || width === 0) {
+  if (width === 0) {
     return null;
   }
   if (devices.includes('desktop') && desktopBreakpoint <= width) {
@@ -39,14 +38,5 @@ export const Hide: FC<Props> = ({ devices = [], children }) => {
   if (devices.includes('mobile') && tabletBreakpoint > width) {
     return null;
   }
-
-  return isLoading(children);
+  return <>{children}</>;
 };
-
-export async function getStaticProps() {
-  return {
-    props: {
-      window,
-    },
-  };
-}
