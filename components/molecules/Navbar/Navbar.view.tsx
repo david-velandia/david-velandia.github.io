@@ -2,8 +2,17 @@ import React, { FC, useState } from 'react';
 import NextLink from 'next/link';
 
 import { Logo } from '@/atoms/Icons';
-import { Hide, Hamburger } from '@/atoms';
-import { DesktopMenu, LogoLink, Nav, NavItem, NavLink } from './Navbar.styles';
+import { Hide } from '@/atoms';
+import {
+  DesktopMenu,
+  LogoLink,
+  MobileContainer,
+  MobileHamburger,
+  MobileList,
+  Nav,
+  NavItem,
+  NavLink,
+} from './Navbar.styles';
 
 export interface NavbarProps {
   items: {
@@ -22,10 +31,10 @@ export const Navbar: FC<NavbarProps> = ({ items }) => {
   return (
     <Nav>
       <Hide devices={['desktop']}>
-        <Hamburger isActive={isActive} onClick={handleHamburgerClick} />
+        <MobileHamburger isActive={isActive} onClick={handleHamburgerClick} />
         {isActive && (
-          <div>
-            <ul>
+          <MobileContainer>
+            <MobileList>
               {items.map((item) => (
                 <NavItem key={`menu-${item.label}`}>
                   <NextLink href={item.to}>
@@ -33,8 +42,8 @@ export const Navbar: FC<NavbarProps> = ({ items }) => {
                   </NextLink>
                 </NavItem>
               ))}
-            </ul>
-          </div>
+            </MobileList>
+          </MobileContainer>
         )}
       </Hide>
       <NextLink href="/">

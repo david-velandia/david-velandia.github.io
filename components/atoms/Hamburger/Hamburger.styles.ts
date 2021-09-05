@@ -8,7 +8,6 @@ export const Container = styled.button`
   display: inline-block;
   overflow: visible;
   margin: 0;
-  padding: 15px;
   cursor: pointer;
   transition-timing-function: linear;
   transition-duration: 0.15s;
@@ -41,7 +40,7 @@ export const Inner = styled.div<InnerProps>`
     transition-duration: 0.15s;
     transition-property: transform;
     border-radius: 4px;
-    background-color: red;
+    background-color: currentColor;
   }
 
   &:after,
