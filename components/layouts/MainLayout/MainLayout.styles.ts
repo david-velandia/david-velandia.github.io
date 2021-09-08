@@ -21,6 +21,8 @@ export const Main = styled.main`
   margin: auto;
   max-width: 1150px;
   padding: 0 16px 0 36px;
+  display: flex;
+  flex-wrap: wrap;
 
   ${({ theme }) => theme.query.desktop} {
     padding: 20px 21px 20px 89px;
