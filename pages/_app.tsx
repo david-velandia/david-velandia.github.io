@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { AppProps } from 'next/app';
+import '../i18n';
+
 import { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components';
 import { useIsomorphicLayoutEffect } from '@/hooks';
 

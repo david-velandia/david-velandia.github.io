@@ -1,0 +1,16 @@
+{
+  "cv": {
+    "contact": {
+      "title": "Contact Me",
+      "content": "If you like my profile and you want to work with me.",
+      "email": "david.velandia@icloud.com",
+      "linkedIn": "https://www.linkedin.com/in/andres-david-velandia"
+    },
+    "menu": {
+      "skills": "Skills",
+      "career": "Career",
+      "experience": "Experience",
+      "blog": "Blog"
+    }
+  }
+}
