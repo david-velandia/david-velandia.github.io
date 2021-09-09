@@ -1,4 +1,6 @@
 import React from 'react';
+import Head from 'next/head';
+
 import { MainLayout } from '@/layouts';
 import { Card, CardTitle, CardContent, Grid } from '@/atoms';
 import { IconLinkedIn, IconMail } from '@/atoms/Icons';
@@ -9,6 +11,10 @@ export default function Home() {
 
   return (
     <MainLayout>
+      <Head>
+        <title>David Velandia - Web Developer</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Grid desktop={6} tablet={6} mobile={12} spacing={5} noLeftSpacing>
         <Card>
           <CardTitle>Test</CardTitle>
