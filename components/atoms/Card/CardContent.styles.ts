@@ -1,8 +1,13 @@
 import styled from 'styled-components';
+import { CardContentProps } from './CardContent';
 
-export const Content = styled.div`
+interface ContentProps {
+  $direction: CardContentProps['direction'];
+}
+
+export const Content = styled.div<ContentProps>`
   font-size: 18px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: ${({ $direction }) => $direction};
 `;

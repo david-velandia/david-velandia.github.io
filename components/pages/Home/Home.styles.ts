@@ -3,12 +3,38 @@ import {
   IconMail as AtomIconMail,
   IconLinkedIn as AtomIconLinkedIn,
 } from '@/atoms';
+import { ProfileImg as MoleculeProfileImg } from '@/molecules';
 import styled from 'styled-components';
 
 export const MainText = styled.p`
   font-size: 20px;
   font-weight: 300;
   width: 100%;
+`;
+
+export const RegularText = styled.span`
+  font-size: 30px;
+  font-weight: 300;
+  flex: 0 1 100%;
+  margin: 8px 0;
+
+  ${({ theme }) => theme.query.desktop} {
+    flex: 0 1 auto;
+  }
+`;
+
+export const ProfileImg = styled(MoleculeProfileImg)`
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-right: auto;
+
+  ${({ theme }) => theme.query.desktop} {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin: -70px 20px 0 -100px;
+  }
 `;
 
 export const List = styled.ul`

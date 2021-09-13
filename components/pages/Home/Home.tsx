@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import { MainLayout } from '@/layouts';
-import { Card, CardTitle, CardContent, Grid } from '@/atoms';
+import { Card, CardTitle, CardContent, Grid, Hide } from '@/atoms';
 import { useTranslation } from 'react-i18next';
 import {
   Link,
@@ -13,6 +13,8 @@ import {
   Button,
   IconMail,
   IconLinkedIn,
+  ProfileImg,
+  RegularText,
 } from './Home.styles';
 
 export const Home = () => {
@@ -28,11 +30,19 @@ export const Home = () => {
       </Head>
       <Grid desktop={7} tablet={12} mobile={12} spacing={5}>
         <Card>
-          <CardTitle>Test</CardTitle>
-          <CardContent>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo debitis dolores, odit
-            voluptatibus, rem ea dicta quis inventore laborum sapiente explicabo, deleniti enim
-            quibusdam? Beatae laudantium ad eius perspiciatis?
+          <CardContent direction="row">
+            <ProfileImg />
+            <RegularText as="h2">
+              <b>Hi</b>,{' '}
+              <Hide devices={['tablet']}>
+                <br />
+              </Hide>{' '}
+              I&apos;m <b>David Velandia</b>
+            </RegularText>{' '}
+            <br />
+            <RegularText>
+              <b>Web Developer</b>, who loves what he does.
+            </RegularText>
           </CardContent>
         </Card>
       </Grid>
