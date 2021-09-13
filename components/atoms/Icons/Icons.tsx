@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const IconMail = () => (
-  <svg width="53" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const IconMail = (props) => (
+  <svg viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <g>
       <path
         d="M26.297 52c14.523 0 26.297-11.64 26.297-26S40.82 0 26.297 0C11.773 0 0 11.64 0 26s11.774 26 26.297 26Z"
@@ -28,8 +28,8 @@ export const IconMail = () => (
   </svg>
 );
 
-export const IconLinkedIn = () => (
-  <svg width="53" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const IconLinkedIn = (props) => (
+  <svg viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <g>
       <path
         d="M26.297 51.999c14.523 0 26.297-11.64 26.297-26s-11.774-26-26.297-26C11.773-.001 0 11.639 0 25.999s11.774 26 26.297 26Z"

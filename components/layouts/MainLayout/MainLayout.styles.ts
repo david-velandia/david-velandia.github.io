@@ -20,7 +20,7 @@ export const Header = styled.header`
 export const Main = styled.main`
   margin: auto;
   max-width: 1150px;
-  padding: 0 16px 0 36px;
+  padding: 0 16px;
   display: flex;
   flex-wrap: wrap;
 

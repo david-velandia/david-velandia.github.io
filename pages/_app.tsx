@@ -30,7 +30,9 @@ const GlobalStyle = createGlobalStyle`
 const theme: DefaultTheme = {
   colors: {
     primary: '#E5E5E5',
+    secondary400: '#8759fd',
     secondary: '#6B38FB',
+    secondary600: '#5f33f4',
     white: '#FFFFFF',
     mainBlack: '#222222',
   },

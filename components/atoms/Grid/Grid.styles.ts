@@ -12,7 +12,15 @@ interface RootProps {
 
 export const Root = styled.div<RootProps>`
   box-sizing: border-box;
-  padding: ${({ $spacing }) => $spacing * 4}px;
+  padding: ${({ $spacing }) => $spacing * 2}px;
+
+  ${({ theme }) => theme.query.tablet} {
+    padding: ${({ $spacing }) => $spacing * 3}px;
+  }
+
+  ${({ theme }) => theme.query.desktop} {
+    padding: ${({ $spacing }) => $spacing * 4}px;
+  }
 
   ${({ $mobile }) =>
     $mobile &&
